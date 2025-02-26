@@ -299,3 +299,36 @@
 
 
 })(jQuery);
+document.addEventListener("keydown", function(e) {
+  var key = e.keyCode || e.which;
+  
+  // Блокируем F12
+  if (key == 123) {
+      e.preventDefault();
+      return false;
+  }
+
+  // Блокируем Ctrl + Shift + I
+  if (e.ctrlKey && e.shiftKey && key == 73) {
+      e.preventDefault();
+      return false;
+  }
+
+  // Блокируем Ctrl + Shift + J
+  if (e.ctrlKey && e.shiftKey && key == 74) {
+      e.preventDefault();
+      return false;
+  }
+
+  // Блокируем Ctrl + Shift + C
+  if (e.ctrlKey && e.shiftKey && key == 67) {
+      e.preventDefault();
+      return false;
+  }
+
+  // Блокируем Ctrl + U
+  if (e.ctrlKey && key == 85) {
+      e.preventDefault();
+      return false;
+  }
+}, false);
